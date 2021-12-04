@@ -1,0 +1,13 @@
+{
+  "name": "single-file-node-apps",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node test",
+    "build": "rollup -f cjs index.js -o build/common.js"
+  },
+  "author": "YieldRay",
+  "license": "ISC"
+}
