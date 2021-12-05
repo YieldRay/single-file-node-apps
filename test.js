@@ -1,13 +1,3 @@
-import { host, ls, runCommands } from "./index.js";
-// ls()
-//     .then(console.log)
-//     .then(() => runCommands("ls"));
-
-host([
-    { public: "a.js", local: "/" },
-    { public: "/", local: "./public/" },
-    {
-        public: "/test/",
-        local: "./test.js",
-    },
-]);
+import { question, quit } from "./src/readline.js";
+console.log("You anwsered: " + (await question("Do you like wan you xi? ")));
+quit(); // must execute quit() to quit the program

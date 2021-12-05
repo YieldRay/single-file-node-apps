@@ -29,6 +29,6 @@ function runCommands(...commands) {
     });
 }
 
-//runCommands("ls -a -l", "curl --help");
+//runCommands("ls -a -l", "pwd");
 
 export default runCommands;
