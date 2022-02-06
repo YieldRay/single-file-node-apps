@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "node test",
-    "build": "rollup -f cjs index.js -o build/common.js"
+    "test": "find -wholename './test/*.js' | xargs -n 1 node",
+    "build": "npx rollup -f cjs index.js -o dist/index.js"
   },
   "author": "YieldRay",
   "license": "ISC"
