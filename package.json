@@ -6,8 +6,11 @@
   "type": "module",
   "scripts": {
     "test": "find -wholename './test/*.js' | xargs -n 1 node",
-    "build": "npx rollup -f cjs index.js -o dist/index.js"
+    "build": "rollup -f cjs index.js -o dist/index.js"
   },
   "author": "YieldRay",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^2.69.0"
+  }
 }

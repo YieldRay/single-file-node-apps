@@ -1,13 +1,14 @@
 import { opendir } from "fs/promises";
-async function ls(path = "./", onlyFiles = false, showHideFiles = false) {
-    const files = [];
+async function lsa(path = "./", showHide = false) {
+    const files = [],
+        folders = [];
     try {
         const dir = await opendir(path);
         for await (const dirent of dir) {
-            if (!showHideFiles && dirent.name.startsWith(".")) continue;
-            
+            if (!showHide && dirent.name.startsWith(".")) continue;
+
             if (dirent.isDirectory()) {
-                if (!onlyFiles) files.push(dirent.name + "/");
+                folders.push(dirent.name);
             } else {
                 files.push(dirent.name);
             }
@@ -15,10 +16,10 @@ async function ls(path = "./", onlyFiles = false, showHideFiles = false) {
     } catch (err) {
         console.error(err);
     }
-    return files;
+    return { folders, files };
 }
 
 // ls().then(console.log);
 // http://nodejs.cn/api/fs.html#class-fsdirent
 
-export default ls;
+export default lsa;
