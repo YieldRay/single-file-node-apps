@@ -1,2 +1,2 @@
-import runCommand from "../src/runCommand.js";
-runCommand("ls", "pwd");
+import { exec } from "../src/runCommand.js";
+console.log((await exec("ls")).stdout);

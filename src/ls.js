@@ -1,5 +1,5 @@
 import { opendir } from "fs/promises";
-async function lsa(path = "./", showHide = false) {
+async function ls(path = "./", showHide = false) {
     const files = [],
         folders = [];
     try {
@@ -22,4 +22,4 @@ async function lsa(path = "./", showHide = false) {
 // ls().then(console.log);
 // http://nodejs.cn/api/fs.html#class-fsdirent
 
-export default lsa;
+export default ls;
