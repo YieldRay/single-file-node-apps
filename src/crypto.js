@@ -12,19 +12,13 @@ function curry(func) {
     };
 }
 
-const createHash = (algorithm, data, digest = "hex") =>
-    crypto.createHash(algorithm).update(data).digest(digest);
+const createHash = (algorithm, data, digest = "hex") => crypto.createHash(algorithm).update(data).digest(digest);
 
-const createHmac = (algorithm, data, salt, digest = "hex") =>
-    crypto.createHmac(algorithm, salt).update(data).digest(digest);
+const createHmac = (algorithm, data, salt, digest = "hex") => crypto.createHmac(algorithm, salt).update(data).digest(digest);
 
-const genHash = curry((algorithm, data) =>
-    crypto.createHash(algorithm).update(data).digest("hex")
-);
+const genHash = curry((algorithm, data) => crypto.createHash(algorithm).update(data).digest("hex"));
 
-const genHmac = curry((algorithm, salt, data) =>
-    crypto.createHmac(algorithm, salt).update(data).digest("hex")
-);
+const genHmac = curry((algorithm, salt, data) => crypto.createHmac(algorithm, salt).update(data).digest("hex"));
 
 // console.log(createHash("md5", "password"));
 // console.log(genHash("md5")("password"));
