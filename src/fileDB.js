@@ -61,4 +61,4 @@ class FileDB {
     }
 }
 
-module.exports = { FileDB };
+export { FileDB };

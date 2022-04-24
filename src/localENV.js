@@ -21,6 +21,7 @@ export default function (ENV_PATH = "./.env") {
  * KEY2=VALUE2
  *
  * Usage:
- * import { ENV } from "./localENV";
+ * import getENV from "./localENV.js";
+ * const ENV = getENV();
  * console.log(ENV.KEY1);
  */
